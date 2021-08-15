@@ -16,3 +16,4 @@ jobs:
         docker build -t dguest390/shiny-dashboard .
         docker run -dp 3838:3838 dguest390/shiny-dashboard
         docker container inspect dguest390/shiny-dashboard
+
