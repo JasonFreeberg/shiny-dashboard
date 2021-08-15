@@ -19,5 +19,5 @@ jobs:
         container_id = $(docker run -p 3838:3838 -d dguest390/shiny-dashboard)
         echo "hello test test test"
         echo "container id is $container_id"
-        docker container inspect $container_id
+        //docker container inspect $container_id
 
