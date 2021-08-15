@@ -14,9 +14,14 @@ jobs:
     - name: Build container image
       run: docker build -t dguest390/shiny-dashboard .
 
+#     - name: Run the container image and ping it
+#       run: |
+#         container_id=$(docker run -p 3838:3838 -d dguest390/shiny-dashboard)
+#         echo "container id is $container_id"
+#         docker container inspect $container_id
+
     - name: Run the container image and ping it
       run: |
-        container_id=$(docker run -p 3838:3838 -d dguest390/shiny-dashboard)
-        echo "container id is $container_id"
-        docker container inspect $container_id
+        docker run -p 3838:3838 -d dguest390/shiny-dashboard
+        curl http://172.17.0.2
 
