@@ -10,10 +10,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Build container image
+      run: docker build -t dguest390/shiny-dashboard .
 
-    - name: Build the Docker image and ping
+    - name: Run the container image and ping it
       run: |
-        docker build -t dguest390/shiny-dashboard .
         container_id = $(docker run -d -p 3838:3838 dguest390/shiny-dashboard)
+        echo "container id is $container_id"
         docker container inspect $container_id
 
