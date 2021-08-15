@@ -1,3 +1,5 @@
+name: Build, run, and ping the container
+
 on:
   push:
     branches: [ main ]
