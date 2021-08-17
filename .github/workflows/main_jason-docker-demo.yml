@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_47346f51505c4d84bc241a0a7b47c347 }}/jasonfreeberg/shiny-dashboard:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_47346f51505c4d84bc241a0a7b47c347 }}/shiny-dashboard:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'jason-docker-demo'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b8b97124c3c845509f023c48948e51fa }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_47346f51505c4d84bc241a0a7b47c347 }}/jasonfreeberg/shiny-dashboard:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_47346f51505c4d84bc241a0a7b47c347 }}/shiny-dashboard:${{ github.sha }}'
